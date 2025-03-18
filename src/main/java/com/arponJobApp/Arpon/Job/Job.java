@@ -1,12 +1,23 @@
 package com.arponJobApp.Arpon.Job;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Job {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String description;
     private int minSalary;
     private int maxSalary;
     private String location;
+
+    public Job() {
+    }
 
     public Job(Long id, String title, String description, int minSalary, int maxSalary, String location) {
         this.id = id;
