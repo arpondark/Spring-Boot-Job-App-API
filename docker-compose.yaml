@@ -1,0 +1,35 @@
+services:
+  db:
+    image: postgres
+    container_name: my_postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: arpon
+      POSTGRES_PASSWORD: arpon
+        
+      POSTGRES_DB: postgres
+    networks:
+      - my-network
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/data/postgres
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin_new
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: SuperSecret
+    networks:
+      - my-network
+    ports:
+      - "5050:80"
+
+networks:
+  my-network:
+    driver: bridge
+
+volumes:
+  pgdata:
