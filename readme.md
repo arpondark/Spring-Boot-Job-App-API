@@ -12,10 +12,58 @@ This project is a Spring Boot application that provides APIs for managing job ap
 ### Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/Spring-Boot-Job-App-API.git
+git clone https://github.com/arpondark/Spring-Boot-Job-App-API.git
 cd Spring-Boot-Job-App-API
 ```
-
+## Structure 
+```
+├── .gitattributes
+├── .gitignore
+├── .mvn
+    └── wrapper
+    │   └── maven-wrapper.properties
+├── docker-compose.yaml
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+├── readme.md
+└── src
+    ├── main
+           ├── java
+        │   └── com
+        │   │   └── arponJobApp
+        │   │       └── Arpon
+        │   │           ├── ArponJobAppApplication.java
+        │   │           ├── Company
+        │   │               ├── Company.java
+        │   │               ├── CompanyController.java
+        │   │               ├── CompanyRepository.java
+        │   │               ├── CompanyService.java
+        │   │               └── impl
+        │   │               │   └── CompanyServiceImpl.java
+        │   │           ├── Job
+        │   │               ├── Job.java
+        │   │               ├── JobController.java
+        │   │               ├── JobRepository.java
+        │   │               ├── JobService.java
+        │   │               └── impl
+        │   │               │   └── JobServiceImpl.java
+        │   │           └── review
+        │   │               ├── Review.java
+        │   │               ├── ReviewController.java
+        │   │               ├── ReviewRepository.java
+        │   │               ├── ReviewService.java
+        │   │               └── impl
+        │   │                   └── ReviewServiceImpl.java
+        └── resources
+        │   └── application.properties
+    └── test
+        └── java
+            └── com
+                └── arponJobApp
+                    └── Arpon
+                        └── ArponJobAppApplicationTests.java
+```
 ### Running the application
 
 1. Start the services using Docker Compose:
